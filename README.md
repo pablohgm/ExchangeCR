@@ -6,9 +6,9 @@ Nodejs utility to consult the rate exchange (Us Dollar, Colon) from The Central 
 
 #### How to use
 ```
-import dolarExchange from 'exchangecr'
+import { dollarExchange } from 'exchangecr'
 
-dolarExchange() // { date: '00/00/0000', buyRate: '000.00000000', sellRate: '000.00000000' }
+dollarExchange() // { date: '00/00/0000', buyRate: '000.00000000', sellRate: '000.00000000' }
 
 ```
 
