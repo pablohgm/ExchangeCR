@@ -2,12 +2,13 @@
   "name": "exchangecr",
   "version": "0.1.2",
   "description": "Nodejs utility to consult the rate exchange from The Central Bank of Costa Rica",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "test",
     "start": "nodemon --exec babel-node src/index.js",
     "build": "babel src --out-dir dist",
-    "serve": "node dist/main.js"
+    "serve": "node dist/main.js",
+    "publish": "npm run build && npm publish"
   },
   "keywords": [
     "exchange",
@@ -27,5 +28,8 @@
     "@babel/node": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
     "nodemon": "^1.18.4"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }
