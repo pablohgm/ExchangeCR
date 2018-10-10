@@ -5,7 +5,7 @@ Nodejs utility to consult the rate exchange (Us Dollar, Colon) from The Central 
 `$ npm install exchangecr --save`
 
 #### How to use
-```
+```js
 import { dollarExchange } from 'exchangecr'
 
 (async () => {
