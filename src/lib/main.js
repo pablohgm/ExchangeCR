@@ -39,7 +39,7 @@ const getInformation = async (url) => {
   }
 }
 
-(async () => {
+const dolarExchange = async () => {
   const date = moment().format('DD/MM/YYYY')
   const file = new Map()
     .set('buy', `http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx/ObtenerIndicadoresEconomicosXML?tcIndicador=317&tcFechaInicio=${date}&tcFechaFinal=${date}&tcNombre=dmm&tnSubNiveles=N`)
@@ -49,4 +49,10 @@ const getInformation = async (url) => {
   const sellRate = await getInformation(file.get('sell'))
 
   return { date, buyRate, sellRate }
-})()
+}
+
+export {
+  dolarExchange
+}
+
+
