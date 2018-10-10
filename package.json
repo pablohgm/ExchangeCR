@@ -1,0 +1,31 @@
+{
+  "name": "exchangecr",
+  "version": "0.1.0",
+  "description": "Nodejs utility to consult the rate exchange from The Central Bank of Costa Rica",
+  "main": "main.js",
+  "scripts": {
+    "test": "test",
+    "start": "nodemon --exec babel-node src/lib/main.js",
+    "build": "babel src --out-dir dist",
+    "serve": "node dist/main.js"
+  },
+  "keywords": [
+    "exchange",
+    "Costa",
+    "Rica"
+  ],
+  "author": "pablohgm@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@rgrove/parse-xml": "^1.1.1",
+    "moment": "^2.22.2",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "nodemon": "^1.18.4"
+  }
+}
