@@ -8,8 +8,11 @@ Nodejs utility to consult the rate exchange (Us Dollar, Colon) from The Central 
 ```
 import { dollarExchange } from 'exchangecr'
 
-dollarExchange() // { date: '00/00/0000', buyRate: '000.00000000', sellRate: '000.00000000' }
-
+(async () => {
+  const test = await dollarExchange()
+  console.log(test) 
+  // { date: '00/00/0000', buyRate: '000.00000000', sellRate: '000.00000000' }
+})()
 ```
 
 #### Disclaimer
