@@ -1,4 +1,4 @@
-import moment from 'moment'
+import { format } from 'date-fns'
 import fetch from 'node-fetch'
 import parseXml from '@rgrove/parse-xml'
 
@@ -34,13 +34,13 @@ const getInformation = async (url) => {
 
   for(let item of elements) {
       if(item.parent && item.parent.name === 'NUM_VALOR') {
-        return item.text
+        return Number.parseFloat(item.text)
       }
   }
 }
 
 export const dollarExchange = async () => {
-  const date = moment().format('DD/MM/YYYY')
+  const date = format(new Date(), 'DD/MM/YYYY')
   const file = new Map()
     .set('buy', `http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx/ObtenerIndicadoresEconomicosXML?tcIndicador=317&tcFechaInicio=${date}&tcFechaFinal=${date}&tcNombre=dmm&tnSubNiveles=N`)
     .set('sell', `http://indicadoreseconomicos.bccr.fi.cr/indicadoreseconomicos/WebServices/wsIndicadoresEconomicos.asmx/ObtenerIndicadoresEconomicosXML?tcIndicador=318&tcFechaInicio=${date}&tcFechaFinal=${date}&tcNombre=dmm&tnSubNiveles=N`)
