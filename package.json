@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "build": "babel src --out-dir dist",
-    "publish": "npm run build && npm publish"
+    "build": "babel src --out-dir dist"
   },
   "keywords": [
     "exchange",
