@@ -42,18 +42,18 @@ await dollar.exchange('25/12/2018')
 ```
 If there is a range of dates `exchange` returns a exchange array
 ```javascript
-await dollar.exchange('25/12/2018', '29/12/2018')
+await dollar.exchange('25/12/2018', '26/12/2018')
 // [
 //     { date: '25/12/2018', purchaseRate: 000.00, saleRate: 000.00 },
-//     { date: '29/12/2018', purchaseRate: 000.00, saleRate: 000.00 }
+//     { date: '26/12/2018', purchaseRate: 000.00, saleRate: 000.00 }
 //   ]
 ```
 For euro there is only one rate (no purchase and sale rates). Usually with poor support from the bank for updates dates, works fine with 3 days of delay
 ```javascript
-await euro.exchange('25/12/2018', '29/12/2018')
+await euro.exchange('25/12/2018', '26/12/2018')
 // [
 //     { date: '25/12/2018', rate: 000.00 },
-//     { date: '29/12/2018', rate: 000.00 }
+//     { date: '26/12/2018', rate: 000.00 }
 //   ]
 ```
 
