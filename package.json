@@ -3,9 +3,13 @@
   "version": "0.2.0",
   "description": "Nodejs utility to consult the rate exchange from The Central Bank of Costa Rica",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "build": "babel src --out-dir dist"
+    "start": "npm run build:live",
+    "build": "tsc",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'npm run build'",
+    "lint": "./node_modules/.bin/tslint -c tslint.json -p tsconfig.json 'src/**/*.{ts,tsx}'",
+    "test": "mocha -r ts-node/register test/**/*.spec.{i,u}.ts"
   },
   "keywords": [
     "exchange",
@@ -16,19 +20,30 @@
   "license": "MIT",
   "dependencies": {
     "@rgrove/parse-xml": "^1.1.1",
-    "date-fns": "^1.29.0",
-    "node-fetch": "^2.2.0"
+    "@types/node-fetch": "^2.1.4",
+    "@types/rgrove__parse-xml": "^1.1.0",
+    "date-fns": "^1.30.1",
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.1.2",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "nodemon": "^1.18.4"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.2",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.0",
+    "typescript": "^3.1.6"
   },
   "files": [
     "dist",
     "src"
+  ],
+  "pre-commit": [
+    "lint",
+    "test"
   ],
   "engines": {
     "node": ">=8.12.0"
