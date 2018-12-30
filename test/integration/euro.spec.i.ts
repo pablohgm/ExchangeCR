@@ -1,26 +1,26 @@
-import { UsDollar } from '../../src/usDollar'
+import { Euro } from '../../src/euro'
 import { expect } from 'chai'
 import 'mocha'
 
-describe('US Dollar', () => {
+describe('Euro', () => {
 
-  const usDollar = new UsDollar()
+  const euro = new Euro()
 
   describe('Exchange', () => {
 
     it('Verify multiple exchange', async () => {
-      const result = await usDollar.exchange('01/12/2018', '02/12/2018')
+      const result = await euro.exchange('26/12/2018', '28/12/2018')
       expect(result).to.be.an('array')
     })
 
     it('Verify single exchange', async () => {
-      let result = await usDollar.exchange('01/12/2018', '01/12/2018')
+      let result = await euro.exchange('26/12/2018', '26/12/2018')
       expect(result).to.be.an('object')
 
-      result = await usDollar.exchange('01/12/2018')
+      result = await euro.exchange('26/12/2018')
       expect(result).to.be.an('object')
 
-      result = await usDollar.exchange()
+      result = await euro.exchange()
       expect(result).to.be.an('object')
     })
   })

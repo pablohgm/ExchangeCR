@@ -13,7 +13,7 @@ describe('US Dollar', () => {
         [{date: '02/12/2018', rate: 1}],
         [{date: '02/12/2018', rate: 2}]
       )
-      expect(result).to.deep.equal([{date: '02/12/2018', buyRate: 1, sellRate: 2}])
+      expect(result).to.deep.equal([{date: '02/12/2018', purchaseRate: 1, saleRate: 2}])
     })
 
   })

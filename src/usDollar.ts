@@ -7,14 +7,14 @@ import { Rate } from './IRate'
 export class UsDollar extends Currency {
 
   /**
-   * Us Dollar Buy indicator provided by Central Bank of Costa Rica
+   * Us Dollar purchase indicator provided by Central Bank of Costa Rica
    */
-  public static BUY_INDICATOR: number = 317
+  public static PURCHASE_INDICATOR: number = 317
 
   /**
    * Us Dollar Sell indicator provided by Central Bank of Costa Rica
    */
-  public static SELL_INDICATOR: number = 318
+  public static SALE_INDICATOR: number = 318
 
   /**
    * Constructor
@@ -28,12 +28,15 @@ export class UsDollar extends Currency {
    *
    * @param startDate Date in a valid string format to defined the start of the search
    * @param endDate Date in a valid string format to defined the end of the search
-   * @return The date buy and sell rate for US Dollar
+   * @return A rate or array of rates for US Dollar
    */
-  public async exchange (startDate?: string, endDate?: string) {
+  public async exchange (startDate?: string, endDate?: string): Promise<Rate|Rate[]> {
+    if (startDate && !endDate) {
+      endDate = startDate
+    }
     const file = new Map()
-      .set('buy', this.getUrl(UsDollar.BUY_INDICATOR, startDate, endDate))
-      .set('sell', this.getUrl(UsDollar.SELL_INDICATOR, startDate, endDate))
+      .set('buy', this.getUrl(UsDollar.PURCHASE_INDICATOR, startDate, endDate))
+      .set('sell', this.getUrl(UsDollar.SALE_INDICATOR, startDate, endDate))
 
     const rates = this.transformRates(
       await this.getInformation(file.get('buy')),
@@ -55,7 +58,7 @@ export class UsDollar extends Currency {
    */
   public transformRates (buyRates: Rate[], sellRates: Rate[]): Rate[] {
     return buyRates.map((item, index) => {
-      return { date: item.date, buyRate: item.rate, sellRate: sellRates[index].rate }
+      return { date: item.date, purchaseRate: item.rate, saleRate: sellRates[index].rate }
     })
   }
 
