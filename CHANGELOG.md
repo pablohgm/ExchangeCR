@@ -24,3 +24,4 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Add pre-commit
 - Add js docs
 - Add unit test
+- Support to euro currency
