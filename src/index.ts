@@ -1,4 +1,5 @@
 import { UsDollar } from './usDollar'
+import { Euro } from './euro'
 
 /**
  * Get the exchange rates for Us Dollar
@@ -13,5 +14,6 @@ const dollarExchange = async () => {
 
 export {
   dollarExchange,
-  UsDollar
+  UsDollar,
+  Euro
 }
