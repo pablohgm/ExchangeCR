@@ -66,6 +66,6 @@ Feel free to dive in! [Open an issue](https://github.com/pablohgm/ExchangeCR/iss
 
 [MIT](http://vjpr.mit-license.org)
 
-[npm-image]: http://img.shields.io/npm/v/exchangecr.svg?style=flat
+[npm-image]: https://badge.fury.io/js/exchangecr.svg
 [npm-url]: https://www.npmjs.com/package/exchangecr
 [travis-url]: https://travis-ci.org/pablohgm/ExchangeCR.svg?branch=master
