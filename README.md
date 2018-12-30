@@ -42,18 +42,18 @@ await dollar.exchange('25/12/2018')
 ```
 If there is a range of dates `exchange` returns a exchange array
 ```javascript
-await dollar.exchange('25/12/2018', '29/12/2018')
+await dollar.exchange('25/12/2018', '26/12/2018')
 // [
 //     { date: '25/12/2018', purchaseRate: 000.00, saleRate: 000.00 },
-//     { date: '29/12/2018', purchaseRate: 000.00, saleRate: 000.00 }
+//     { date: '26/12/2018', purchaseRate: 000.00, saleRate: 000.00 }
 //   ]
 ```
 For euro there is only one rate (no purchase and sale rates). Usually with poor support from the bank for updates dates, works fine with 3 days of delay
 ```javascript
-await euro.exchange('25/12/2018', '29/12/2018')
+await euro.exchange('25/12/2018', '26/12/2018')
 // [
 //     { date: '25/12/2018', rate: 000.00 },
-//     { date: '29/12/2018', rate: 000.00 }
+//     { date: '26/12/2018', rate: 000.00 }
 //   ]
 ```
 
@@ -66,6 +66,6 @@ Feel free to dive in! [Open an issue](https://github.com/pablohgm/ExchangeCR/iss
 
 [MIT](http://vjpr.mit-license.org)
 
-[npm-image]: http://img.shields.io/npm/v/exchangecr.svg?style=flat
+[npm-image]: https://badge.fury.io/js/exchangecr.svg
 [npm-url]: https://www.npmjs.com/package/exchangecr
 [travis-url]: https://travis-ci.org/pablohgm/ExchangeCR.svg?branch=master
