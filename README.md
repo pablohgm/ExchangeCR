@@ -48,7 +48,7 @@ await dollar.exchange('25/12/2018', '29/12/2018')
 //     { date: '29/12/2018', purchaseRate: 000.00, saleRate: 000.00 }
 //   ]
 ```
-For euro there is only one rate (no purchase and sale rates)
+For euro there is only one rate (no purchase and sale rates). Usually with poor support from the bank for updates dates, works fine with 3 days of delay
 ```javascript
 await euro.exchange('25/12/2018', '29/12/2018')
 // [
