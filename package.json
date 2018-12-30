@@ -1,6 +1,6 @@
 {
   "name": "exchangecr",
-  "version": "0.2.1-beta.3",
+  "version": "0.2.1-beta.4",
   "description": "Nodejs utility to consult the rate exchange from The Central Bank of Costa Rica",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
