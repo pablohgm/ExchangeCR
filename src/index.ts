@@ -1,5 +1,5 @@
-import { UsDollar } from './usDollar'
 import { Euro } from './euro'
+import { UsDollar } from './usDollar'
 
 /**
  * Get the exchange rates for Us Dollar
