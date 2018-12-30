@@ -16,7 +16,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - Add npm task
 - Bug fixes
 
-## 0.3.0 - 2018-10-21
+## 0.3.0 - 2018-12-30
 
 - Migrate to typescript
 - Support of range of dates for the exchange
