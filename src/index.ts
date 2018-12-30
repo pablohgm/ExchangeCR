@@ -1,3 +1,4 @@
+import { Euro } from './euro'
 import { UsDollar } from './usDollar'
 
 /**
@@ -13,5 +14,6 @@ const dollarExchange = async () => {
 
 export {
   dollarExchange,
-  UsDollar
+  UsDollar,
+  Euro
 }
